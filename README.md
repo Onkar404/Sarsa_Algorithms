@@ -17,9 +17,7 @@ SARSA is an **on-policy TD control algorithm** that updates Q-values using the n
 
 **Update Rule:**
 
-\[
-Q(s, a) \leftarrow Q(s, a) + \alpha \left[r + \gamma Q(s', a') - Q(s, a)\right]
-\]
+Q(s, a) ← Q(s, a) + α * [r + γ * Q(s′, a′) − Q(s, a)]
 
 Where:
 - `s, a` = current state and action  
@@ -35,9 +33,7 @@ Q-Learning is an **off-policy** variant of SARSA. It uses the maximum future Q-v
 
 **Update Rule:**
 
-\[
-Q(s, a) \leftarrow Q(s, a) + \alpha \left[r + \gamma \max_{a'} Q(s', a') - Q(s, a)\right]
-\]
+Q(s, a) ← Q(s, a) + α * [r + γ * max_a′ Q(s′, a′) − Q(s, a)]
 
 It assumes the agent will always act optimally in the future (greedy update).
 
@@ -48,9 +44,7 @@ Expected SARSA averages over all possible actions using their probabilities unde
 
 **Update Rule:**
 
-\[
-Q(s, a) \leftarrow Q(s, a) + \alpha \left[r + \gamma \sum_{a'} \pi(a'|s') Q(s', a') - Q(s, a)\right]
-\]
+Q(s, a) ← Q(s, a) + α * [r + γ * ∑_a′ π(a′|s′) * Q(s′, a′) − Q(s, a)]
 
 Where `π(a′|s′)` is the probability of action `a′` under the current ε-greedy policy.
 
@@ -68,11 +62,5 @@ All environments are part of [OpenAI Gym](https://www.gymlibrary.dev/).
 
 ---
 
-## 🚀 How to Use
 
-### 1. 🔧 Installation
-
-```bash
-git clone https://github.com/your-username/sarsa-algorithms.git
-cd sarsa-algorithms
 pip install -r requirements.txt
